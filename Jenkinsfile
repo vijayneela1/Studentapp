@@ -41,16 +41,17 @@ pipeline {
                sh 'mvn package'
             }
         }
-        stage('SAST-Veracode') {
+        stage('SAST-Shiftleft') {
             steps {
-               sh 'mvn package'
+               dir("target/*.war") {
+                   sh '/usr/local/bin/sl analyze --app Studentapp --java target/*.war'
             }
         }
       
-        stage('mvn-Deploy-nexus-backup') {
+       /* stage('mvn-Deploy-nexus-backup') {
             steps {
                sh 'mvn deploy'
             }
-        }
+        }*/
     }
 }
