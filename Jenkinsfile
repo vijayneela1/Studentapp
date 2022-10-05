@@ -1,9 +1,9 @@
 
 pipeline {
     agent any
-    environment {
+    /*environment {
         MAVEN_HOME = tool('maven-3.8')
-    }
+    }*/
     stages {
         stage('Check-Git-Secrets') {
             steps {
@@ -33,7 +33,7 @@ pipeline {
         } */
         stage('Unit-Testing-sonar'){
             steps{
-                sh '${MAVEN_HOME}/bin/mvn -B sonar:sonar -Dsonar.projectKey=testing -Dsonar.host.url=http://20.198.108.138:9000 -Dsonar.login=ac9b4b0648bf88b682a3d487aa8a2227bc46575c'
+                sh 'mvn -B sonar:sonar -Dsonar.projectKey=testing -Dsonar.host.url=http://20.198.108.138:9000 -Dsonar.login=ac9b4b0648bf88b682a3d487aa8a2227bc46575c'
             }
         } 
         stage('mvn-Package') {
