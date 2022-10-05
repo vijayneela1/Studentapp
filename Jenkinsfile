@@ -45,8 +45,11 @@ pipeline {
             steps {
                dir("target/*.war") {
                    sh '/usr/local/bin/sl analyze --app Studentapp --java target/*.war'
+                   sh 'sl auth --org "20b42bc3-da37-4a84-ace8-7bc23abd58df" --token "eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjQ5NDcyOTcsImlzcyI6IlNoaWZ0TGVmdCIsIm9yZ0lEIjoiMjBiNDJiYzMtZGEzNy00YTg0LWFjZTgtN2JjMjNhYmQ1OGRmIiwidXNlcklEIjoiMTA2Y2ZlNWUtNWI3NS00NTRhLTgzNWUtMWNiZWYxMmI3MzFkIiwic2NvcGVzIjpbInNlYXRzOndyaXRlIiwiZXh0ZW5kZWQiLCJhcGk6djIiLCJ1cGxvYWRzOndyaXRlIiwibG9nOndyaXRlIiwicGlwZWxpbmVzdGF0dXM6cmVhZCIsIm1ldHJpY3M6d3JpdGUiLCJwb2xpY2llczpjdXN0b21lciJdfQ.dy89yqPy2fJFKGlh7pLXEi781hET2G2rFtKkT8Gz2Rjcn3MRIFTgZ5U8trFpw2gnK4t5dMwwPhG6jJJ7r8esjye1sZwz4h9K0hUMov1wGULLROcDKEDQycGy_2o9q1kucBZ6ZeQ_sDS5aQMG7OHIQLIi6agrTFU1BdhyLuyINiHmkdoAL-JkyeP2MFLYKshHlyxRn6DLTQWuYoq7i35kNYAMe63oiL7mrWm7ZJhpCFqrYGA95GQO2rpv4W3DeXFrHN8yTpJrfqFb4PP-p7Eglbps2OVfyypIF4nYISQTirlJA43RSOBEG2vJzJ6PlxWfsMhMuwziDETyx1s34X14hQ"'  
+               }
             }
         }
+         
       
        /* stage('mvn-Deploy-nexus-backup') {
             steps {
