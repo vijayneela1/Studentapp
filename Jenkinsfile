@@ -1,9 +1,10 @@
 
 pipeline {
     agent any
-    /*environment {
+    environment {
         MAVEN_HOME = tool('maven')
-    }*/
+        sonarscanner = tool ('sonarscanner')
+    }
     stages {
         stage('Check-Git-Secrets') {
             steps {
